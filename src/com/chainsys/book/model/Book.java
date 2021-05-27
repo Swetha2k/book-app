@@ -13,8 +13,15 @@ public class Book {
 	}
 	public Book(String name) {
 		this.name = name;
-
 	}
+	public Book(int id) {
+		this.id = id;
+	}
+
+	public Book(LocalDate publish_Date) {
+		this.publish_Date = publish_Date;
+	}
+
 	public Book(int id, String name, LocalDate publish_Date) {
 		super();
 		this.id = id;

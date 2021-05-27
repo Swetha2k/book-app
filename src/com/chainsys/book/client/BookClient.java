@@ -16,6 +16,7 @@ public class BookClient {
 
 		Set<Book> bookSet;
 		List<String> nameList;
+		List<Integer> idList;
 		DateTimeFormatter dateFormat;
 		String date;
 		int id;
@@ -23,7 +24,7 @@ public class BookClient {
 
 		BookService service = new BookServiceImpl();
 		System.out.println("Enter the choice");
-		System.out.println(" 1. Find All Books\n 2. Adding a Book \n 3. Update the Book Name Based on the Id\n 4. Find All book Names");
+		System.out.println(" 1. Find All Books\n 2. Adding a Book \n 3. Update the Book Name Based on the Id\n 4. Display All book Names \n 5. Display All book Id ");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
 		switch (choice) {
@@ -63,9 +64,15 @@ public class BookClient {
 			}
 			break;
 		case 4:
-			System.out.println("Find All book Names");
+			System.out.println("Display All book Names");
 			nameList = service.findAllName();
 			System.out.println(nameList);
+			break;
+			
+	   case 5:
+			System.out.println("Display All book Id");
+			idList = service.findAllId();
+			System.out.println(idList);
 			break;
 		
 		default:

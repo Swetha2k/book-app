@@ -11,4 +11,5 @@ public interface BookDAO {
 	List<String> findAllName();
 	void save (Book book);
 	void update (Book book);
+	List<Integer> findAllId();
 }

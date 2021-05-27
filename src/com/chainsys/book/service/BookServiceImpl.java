@@ -21,8 +21,12 @@ public class BookServiceImpl implements BookService {
 	
 	@Override
 	public List<String> findAllName() {
-		// TODO Auto-generated method stub
 		return dao.findAllName();
+	}
+	
+	@Override
+	public List<Integer> findAllId() {
+		return dao.findAllId();
 	}
 	@Override
 	public void save(Book book) {

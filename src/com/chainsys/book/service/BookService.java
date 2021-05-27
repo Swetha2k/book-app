@@ -11,5 +11,6 @@ public interface BookService {
 	void save(Book book) throws BookNotFoundException;
 	void update(Book book) throws BookNotFoundException;
 	List<String> findAllName();
+	List<Integer> findAllId();
 
 }

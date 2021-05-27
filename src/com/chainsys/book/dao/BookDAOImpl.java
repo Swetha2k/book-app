@@ -20,6 +20,7 @@ public class BookDAOImpl implements BookDAO {
 	private static ResultSet rs;
 	private static Set<Book> bookSet;
 	private static List<String> nameList;
+	private static List<Integer> idList;
 
 
 	public BookDAOImpl() {
@@ -62,6 +63,21 @@ public class BookDAOImpl implements BookDAO {
 		}
 		return nameList;
 	}
+
+	@Override
+	public List<Integer> findAllId() {
+		try {
+			pstmt = con.prepareStatement("select id from book_2591");
+			rs = pstmt.executeQuery();
+			idList = new ArrayList<>();
+			while (rs.next()) {
+				idList.add(rs.getInt("id"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return idList;
+	}	
 
 	@Override
 	public void save(Book book) {
