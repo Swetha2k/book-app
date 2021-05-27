@@ -7,13 +7,15 @@ public class Book {
 	private int id;
 	private String name;
 	private LocalDate publish_Date;
+
 	public Book() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+
 	public Book(String name) {
 		this.name = name;
 	}
+
 	public Book(int id) {
 		this.id = id;
 	}
@@ -28,24 +30,31 @@ public class Book {
 		this.name = name;
 		this.publish_Date = publish_Date;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public LocalDate getPublish_Date() {
 		return publish_Date;
 	}
+
 	public void setPublish_Date(LocalDate publish_Date) {
 		this.publish_Date = publish_Date;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,6 +64,7 @@ public class Book {
 		result = prime * result + ((publish_Date == null) ? 0 : publish_Date.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -78,10 +88,10 @@ public class Book {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", name=" + name + ", publish_Date=" + publish_Date + "]";
 	}
 
-	
 }

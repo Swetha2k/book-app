@@ -22,7 +22,6 @@ public class BookDAOImpl implements BookDAO {
 	private static List<String> nameList;
 	private static List<Integer> idList;
 
-
 	public BookDAOImpl() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -48,7 +47,6 @@ public class BookDAOImpl implements BookDAO {
 		return bookSet;
 	}
 
-	
 	@Override
 	public List<String> findAllName() {
 		try {
@@ -77,7 +75,7 @@ public class BookDAOImpl implements BookDAO {
 			e.printStackTrace();
 		}
 		return idList;
-	}	
+	}
 
 	@Override
 	public void save(Book book) {
@@ -90,7 +88,7 @@ public class BookDAOImpl implements BookDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
@@ -104,6 +102,17 @@ public class BookDAOImpl implements BookDAO {
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public void delete(int id) {
+		try {
+			pstmt = con.prepareStatement("delete book_2591 where id=?");
+			pstmt.setInt(1, id);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
