@@ -57,4 +57,17 @@ public class BookDAOImpl implements BookDAO {
 		
 	}
 
+	@Override
+	public void update(Book book) {
+		try {
+			pstmt = con.prepareStatement("update book_2591 set name=? where id=?");
+			pstmt.setString(1, book.getName());
+			pstmt.setInt(2, book.getId());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 }

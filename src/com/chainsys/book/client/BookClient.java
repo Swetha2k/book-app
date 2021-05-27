@@ -21,7 +21,7 @@ public class BookClient {
 
 		BookService service = new BookServiceImpl();
 		System.out.println("Enter the choice");
-		System.out.println(" 1. Find All Books\n 2. Adding a Book");
+		System.out.println(" 1. Find All Books\n 2. Adding a Book \n 3. Update the Book Name Based on the Id");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
 		switch (choice) {
@@ -45,7 +45,22 @@ public class BookClient {
 			bookSet = service.findAll();
 			System.out.println(bookSet);
 			break;
-		
+		case 3:
+			System.out.println("Update the Book Name Based on the Id");
+			System.out.println("Enter Id");
+			id = scanner.nextInt();
+			System.out.println("Enter Name");
+			name = scanner.next();
+			Book updateBook = new Book(id, name, null);
+			try {
+				service.update(updateBook);
+				bookSet = service.findAll();
+				System.out.println(bookSet);
+			} catch (BookNotFoundException e) {
+
+			}
+			break;
+
 		default:
 			break;
 

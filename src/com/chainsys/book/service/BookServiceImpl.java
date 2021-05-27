@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.chainsys.book.dao.BookDAO;
 import com.chainsys.book.dao.BookDAOImpl;
+import com.chainsys.book.exception.BookNotFoundException;
 import com.chainsys.book.model.Book;
 
 public class BookServiceImpl implements BookService {
@@ -18,6 +19,10 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public void save(Book book) {
 	dao.save(book);		
+	}
+	@Override
+	public void update(Book book) throws BookNotFoundException {
+	dao.update(book);		
 	}
 
 }

@@ -8,4 +8,5 @@ public interface BookDAO {
 
 	Set<Book> findAll();
 	void save (Book book);
+	void update (Book book);
 }

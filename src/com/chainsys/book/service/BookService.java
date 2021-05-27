@@ -2,10 +2,12 @@ package com.chainsys.book.service;
 
 import java.util.Set;
 
+import com.chainsys.book.exception.BookNotFoundException;
 import com.chainsys.book.model.Book;
 
 public interface BookService {
 	Set<Book> findAll();
-	void save(Book book);
+	void save(Book book) throws BookNotFoundException;
+	void update(Book book) throws BookNotFoundException;
 
 }
