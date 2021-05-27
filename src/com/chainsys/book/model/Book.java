@@ -11,6 +11,10 @@ public class Book {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Book(String name) {
+		this.name = name;
+
+	}
 	public Book(int id, String name, LocalDate publish_Date) {
 		super();
 		this.id = id;

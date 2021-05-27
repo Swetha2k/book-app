@@ -1,5 +1,6 @@
 package com.chainsys.book.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.book.exception.BookNotFoundException;
@@ -9,5 +10,6 @@ public interface BookService {
 	Set<Book> findAll();
 	void save(Book book) throws BookNotFoundException;
 	void update(Book book) throws BookNotFoundException;
+	List<String> findAllName();
 
 }

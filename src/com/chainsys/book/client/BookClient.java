@@ -2,6 +2,7 @@ package com.chainsys.book.client;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -14,6 +15,7 @@ public class BookClient {
 	public static void main(String[] args) throws BookNotFoundException {
 
 		Set<Book> bookSet;
+		List<String> nameList;
 		DateTimeFormatter dateFormat;
 		String date;
 		int id;
@@ -21,7 +23,7 @@ public class BookClient {
 
 		BookService service = new BookServiceImpl();
 		System.out.println("Enter the choice");
-		System.out.println(" 1. Find All Books\n 2. Adding a Book \n 3. Update the Book Name Based on the Id");
+		System.out.println(" 1. Find All Books\n 2. Adding a Book \n 3. Update the Book Name Based on the Id\n 4. Find All book Names");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
 		switch (choice) {
@@ -60,7 +62,12 @@ public class BookClient {
 
 			}
 			break;
-
+		case 4:
+			System.out.println("Find All book Names");
+			nameList = service.findAllName();
+			System.out.println(nameList);
+			break;
+		
 		default:
 			break;
 

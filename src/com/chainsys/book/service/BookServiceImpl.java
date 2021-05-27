@@ -1,5 +1,6 @@
 package com.chainsys.book.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.book.dao.BookDAO;
@@ -15,6 +16,13 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public Set<Book> findAll() {
 		return dao.findAll();
+	}
+	
+	
+	@Override
+	public List<String> findAllName() {
+		// TODO Auto-generated method stub
+		return dao.findAllName();
 	}
 	@Override
 	public void save(Book book) {

@@ -6,7 +6,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.book.model.Book;
@@ -17,6 +19,8 @@ public class BookDAOImpl implements BookDAO {
 	private static PreparedStatement pstmt;
 	private static ResultSet rs;
 	private static Set<Book> bookSet;
+	private static List<String> nameList;
+
 
 	public BookDAOImpl() {
 		try {
@@ -41,6 +45,22 @@ public class BookDAOImpl implements BookDAO {
 			e.printStackTrace();
 		}
 		return bookSet;
+	}
+
+	
+	@Override
+	public List<String> findAllName() {
+		try {
+			pstmt = con.prepareStatement("select Name from book_2591");
+			rs = pstmt.executeQuery();
+			nameList = new ArrayList<>();
+			while (rs.next()) {
+				nameList.add(rs.getString("name"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return nameList;
 	}
 
 	@Override
