@@ -15,5 +15,9 @@ public class BookServiceImpl implements BookService {
 	public Set<Book> findAll() {
 		return dao.findAll();
 	}
+	@Override
+	public void save(Book book) {
+	dao.save(book);		
+	}
 
 }

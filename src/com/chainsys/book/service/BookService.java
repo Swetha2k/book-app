@@ -6,5 +6,6 @@ import com.chainsys.book.model.Book;
 
 public interface BookService {
 	Set<Book> findAll();
+	void save(Book book);
 
 }

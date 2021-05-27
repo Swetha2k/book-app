@@ -1,6 +1,7 @@
 package com.chainsys.book.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,6 +41,20 @@ public class BookDAOImpl implements BookDAO {
 			e.printStackTrace();
 		}
 		return bookSet;
+	}
+
+	@Override
+	public void save(Book book) {
+		try {
+			pstmt = con.prepareStatement("insert into book_2591 values(?,?,?)");
+			pstmt.setInt(1, book.getId());
+			pstmt.setString(2, book.getName());
+			pstmt.setDate(3, Date.valueOf(book.getPublish_Date()));
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
